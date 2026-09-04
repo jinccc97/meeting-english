@@ -272,8 +272,15 @@ footer p{max-width:60ch;margin:0}
   .vrow div:before{content:attr(data-k);display:block;font-size:12px;font-weight:600;
     color:var(--text-3);margin-bottom:3px}
   .cta{padding:32px 24px}
-  .dom{display:none}
-  .chain{display:block}
+  /* 도미노는 모바일에서 글자를 떼고 장식으로만 — 문장은 위 .chain 이 맡는다 */
+  .chain{display:block;margin-top:20px}
+  .chainsec{display:flex;flex-direction:column}
+  .chainsec .chain{order:1}
+  .chainsec .dom{order:2}
+  .dom{gap:12px;margin:34px 0 0;padding:22px 0 6px;min-height:0}
+  .dtile{width:54px;min-height:92px;border-radius:10px;padding:0;
+    box-shadow:0 12px 20px -13px rgba(20,16,10,.45),0 0 0 1px rgba(20,16,10,.06)}
+  .dtile p{display:none}
   .showcase{margin-top:36px}
   .winbody{flex-direction:column}
   .winbody .pane+.pane{border-left:none;border-top:1px solid var(--line)}
@@ -353,7 +360,7 @@ footer p{max-width:60ch;margin:0}
 
 <!-- 승 -->
 <div class="wrap">
-<section class="ruled">
+<section class="ruled chainsec">
   <h2 data-t="chainH2"></h2>
   <div class="dom" id="dom"></div>
   <div class="chain" id="chain"></div>
